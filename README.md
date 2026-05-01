@@ -162,3 +162,65 @@ Se generan:
 
 imagen.ppm
 imagen.jpg
+
+## Contenedor 2: Gráfica en Python
+
+Este contenedor genera una gráfica PNG a partir de datos simulados.
+
+## Explicación del código Python
+
+Archivo: grafico.py
+
+Importación
+import matplotlib.pyplot as plt
+import random
+
+Se usan librerías para graficar y generar datos.
+
+Datos
+dias = ["Lun", "Mar", "Mié", "Jue", "Vie"]
+valores = [random.randint(1, 10) for _ in dias]
+
+Simula datos de sensor.
+
+Gráfica
+plt.plot(dias, valores, marker="o")
+
+Dibuja la gráfica.
+
+Etiquetas
+plt.title("Datos simulados de sensor")
+plt.xlabel("Días")
+plt.ylabel("Valores")
+
+Mejora la visualización.
+
+Guardado
+plt.savefig("output/grafico.png")
+
+Genera la imagen final.
+
+## Explicación del Dockerfile
+FROM python:3.11-slim
+
+Imagen base.
+
+RUN pip install matplotlib
+
+Instala dependencias.
+
+COPY . .
+
+Copia archivos.
+
+CMD ["python", "grafico.py"]
+
+## Ejecuta el script.
+docker build -t contenedor-python-grafico .
+docker run --rm -v "$PWD:/app" contenedor-python-grafico
+📷 Resultado
+
+Se genera:
+
+grafico.png
+##

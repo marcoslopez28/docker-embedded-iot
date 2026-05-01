@@ -33,9 +33,9 @@ Esto permite que un programa funcione igual en cualquier computadora sin importa
 
 ---
 
-# ⚙️ Instalación de entorno (WSL + Docker)
+# Instalación de entorno (WSL + Docker)
 
-## 📌 Introducción
+## Introducción
 
 Para poder ejecutar los contenedores Docker en esta práctica, fue necesario configurar un entorno de desarrollo en Windows utilizando WSL (Windows Subsystem for Linux) y Docker Desktop.
 

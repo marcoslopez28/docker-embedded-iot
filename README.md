@@ -33,6 +33,76 @@ Esto permite que un programa funcione igual en cualquier computadora sin importa
 
 ---
 
+# ⚙️ Instalación de entorno (WSL + Docker)
+
+## 📌 Introducción
+
+Para poder ejecutar los contenedores Docker en esta práctica, fue necesario configurar un entorno de desarrollo en Windows utilizando WSL (Windows Subsystem for Linux) y Docker Desktop.
+
+WSL permite ejecutar una distribución de Linux dentro de Windows, lo cual es útil ya que Docker funciona de manera más estable en entornos tipo Linux.
+
+---
+
+## ¿Qué es WSL?
+
+WSL (Windows Subsystem for Linux) es una herramienta que permite ejecutar Linux dentro de Windows sin necesidad de instalar una máquina virtual.
+
+Esto permite trabajar con comandos de Linux, instalar paquetes y ejecutar herramientas como Docker en un entorno compatible.
+
+---
+
+## Instalación de WSL
+
+### Paso 1: Abrir PowerShell como administrador
+
+Se abrió PowerShell con permisos de administrador para poder instalar WSL.
+
+---
+
+### Paso 2: Ejecutar el comando de instalación
+
+```powershell
+wsl --install
+```
+
+## Instalación de Docker
+Paso 1: Instalación de dependencias
+sudo apt install -y ca-certificates curl gnupg
+
+Estas herramientas permiten gestionar repositorios y descargas seguras.
+
+Paso 2: Agregar clave de Docker
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo tee /etc/apt/keyrings/docker.asc > /dev/null
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+Esto permite verificar que los paquetes de Docker sean oficiales.
+
+Paso 3: Agregar repositorio
+echo \
+"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+$(. /etc/os-release && echo $VERSION_CODENAME) stable" | \
+sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+Se añade el repositorio oficial de Docker para instalarlo correctamente.
+
+Paso 4: Instalación de Docker
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+Esto instala Docker y sus componentes principales.
+
+## Verificación de instalación
+
+Para comprobar que Docker funciona correctamente se ejecutó:
+
+sudo docker run hello-world
+
+Si aparece el mensaje:
+
+Hello from Docker!
+
+significa que Docker está instalado correctamente.
 
 ---
 

@@ -25,6 +25,25 @@ El objetivo fue aprender a utilizar Docker para crear entornos reproducibles, ej
 
 ---
 
+## Organización del proyecto
+
+El repositorio se encuentra dividido en dos carpetas principales, cada una correspondiente a un contenedor diferente:
+
+- **contenedor-c-jpg/**  
+  Contiene el proyecto principal en lenguaje C. Incluye el código fuente (`generar_imagen.c`), el archivo `Makefile` para automatizar la compilación y ejecución, el `Dockerfile` que define el entorno del contenedor y la carpeta `output` donde se guarda la imagen generada en formato JPG.
+
+- **contenedor-python-grafico/**  
+  Contiene el contenedor adicional desarrollado en Python. Incluye el script `grafico.py`, el `Dockerfile` para construir el contenedor y la carpeta `output` donde se almacena la gráfica generada en formato PNG.
+
+Además, en la raíz del proyecto se encuentran:
+
+- **README.md** → documentación completa del proyecto  
+- **.gitignore** → archivo para excluir archivos innecesarios del repositorio  
+
+Esta organización permite mantener separados ambos contenedores, facilitando su desarrollo, ejecución y mantenimiento.
+
+---
+
 ##  ¿Qué es Docker?
 
 Docker es una herramienta que permite crear contenedores, los cuales son entornos aislados donde se ejecutan aplicaciones junto con todas sus dependencias.

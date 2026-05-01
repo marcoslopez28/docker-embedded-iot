@@ -162,13 +162,3 @@ Se generan:
 
 imagen.ppm
 imagen.jpg
-
-## Construcción y ejecución
-docker build -t contenedor-c-jpg .
-docker run --rm -v "$PWD:/usr/src/app" contenedor-c-jpg
-📷 Resultado
-
-Se generan:
-
-imagen.ppm
-imagen.jpg

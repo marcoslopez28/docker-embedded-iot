@@ -40,8 +40,6 @@ Además, en la raíz del proyecto se encuentran:
 - **README.md** → documentación completa del proyecto  
 - **.gitignore** → archivo para excluir archivos innecesarios del repositorio  
 
-Esta organización permite mantener separados ambos contenedores, facilitando su desarrollo, ejecución y mantenimiento.
-
 ---
 
 ##  ¿Qué es Docker?
